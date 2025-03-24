@@ -1,0 +1,8 @@
+{
+    "builds": [
+        { "src": "calculatrice.php", "use": "@vercel/php"}
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "/calculatrice.php"}
+    ]
+}
