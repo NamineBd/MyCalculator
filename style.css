@@ -1,0 +1,128 @@
+/* Reset des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Conteneur de la calculatrice */
+.calculator {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 100%;
+}
+
+/* Champ d'affichage */
+.calculator input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: right;
+    background: #f9f9f9;
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease;
+}
+
+.calculator input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Grille des boutons */
+.calculator .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Styles des boutons */
+.calculator .buttons button {
+    padding: 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Boutons chiffres (blanc ambré) */
+.calculator .buttons button:not(.operator):not([value="="]):not([value="C"]):not([value="sqrt"]):not([value="sin"]):not([value="cos"]):not([value="tan"]):not([value="log"]):not([value="exp"]):not([value="^"]) {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+    color: #333;
+}
+
+/* Boutons opérateurs (noir) */
+.calculator .buttons button.operator {
+    background: linear-gradient(135deg, #333, #000);
+    color: #fff;
+}
+
+/* Bouton égal (=) */
+.calculator .buttons button[value="="] {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    grid-column: span 2;
+}
+
+/* Bouton C (effacer) */
+.calculator .buttons button[value="C"] {
+    background: linear-gradient(135deg, #ff4444, #cc0000);
+    color: #fff;
+}
+
+/* Boutons scientifiques (noir) */
+.calculator .buttons button[value="sqrt"],
+.calculator .buttons button[value="sin"],
+.calculator .buttons button[value="cos"],
+.calculator .buttons button[value="tan"],
+.calculator .buttons button[value="log"],
+.calculator .buttons button[value="exp"],
+.calculator .buttons button[value="^"] {
+    background: linear-gradient(135deg, #444, #222);
+    color: #fff;
+}
+
+/* Effets au survol */
+.calculator .buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.calculator .buttons button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .calculator {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .calculator .buttons button {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
